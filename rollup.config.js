@@ -10,8 +10,11 @@ const production = !process.env.ROLLUP_WATCH;
 
 function globalSassFile(filepath) {
   return {
-    style({ content }) {
-      return { code: `@import '${filepath}';\n${content}` };
+    style({ content, attributes }) {
+      const { lang } = attributes;
+
+      if (lang === 'scss') return { code: `@import '${filepath}';\n${content}` };
+      return null;
     },
   };
 }
