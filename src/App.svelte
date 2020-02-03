@@ -4,6 +4,10 @@
 
 <style lang="scss">
   @import '@/app';
+
+  h1 {
+    color: $color;
+  }
 </style>
 
 <main>

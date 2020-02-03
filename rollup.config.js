@@ -3,11 +3,18 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import importer from 'node-sass-alias-importer';
-import path from 'path';
 import { terser } from 'rollup-plugin-terser';
 import { scss } from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
+
+function globalSassFile(filepath) {
+  return {
+    style({ content }) {
+      return { code: `@import '${filepath}';\n${content}` };
+    },
+  };
+}
 
 export default {
   input: 'src/main.js',
@@ -22,13 +29,13 @@ export default {
       // enable run-time checks when not in production
       dev: !production,
       preprocess: [
+        globalSassFile('./src/styles/variables.scss'),
         scss({
           importer: [
             importer({
               '@': './src/styles/',
             }),
           ],
-          // includePaths: [path.resolve(__dirname, 'src/styles/')],
         }),
       ],
 
