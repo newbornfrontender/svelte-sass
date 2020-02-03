@@ -1,0 +1,34 @@
+{
+  "name": "svelte-sass",
+  "version": "1.0.0",
+  "scripts": {
+    "format": "prettier --write --ignore-path .gitignore **/*.{html,css,js*,svelte}",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "node-sass": "^4.13.1",
+    "node-sass-alias-importer": "^1.0.0",
+    "prettier": "^1.19.1",
+    "prettier-plugin-svelte": "^0.7.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^3.3.1"
+  },
+  "dependencies": {
+    "sirv-cli": "^0.4.4"
+  },
+  "prettier": {
+    "svelteBracketNewLine": true,
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always"
+  }
+}
