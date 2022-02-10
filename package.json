@@ -10,7 +10,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "node-sass-alias-importer": "^1.0.0",
     "prettier": "^1.19.1",
     "prettier-plugin-svelte": "^0.7.0",
